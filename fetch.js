@@ -10,20 +10,23 @@ document.getElementById("form").addEventListener("submit", function (event) {
 
   let formData = new FormData(this);
 
-  fetch("https://formsubmit.co/ajax/your@email.com", {
+  fetch("https://formsubmit.co/ajax/mugerithuso@gmail.com", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",
     },
     body: JSON.stringify({
-      name: "vhageri",
-      email: "mugerithuso@gmail.com",
+      name: formData.name,
+      email: formData.email,
+      subject: formData.subject,
+      message: formData.message,
     }),
   })
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
+      console.log(formData);
       // Simulate form submission with timeout
       setTimeout(() => {
         // Reset form
