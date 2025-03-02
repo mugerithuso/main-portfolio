@@ -17,10 +17,10 @@ document.getElementById("form").addEventListener("submit", function (event) {
       Accept: "application/json",
     },
     body: JSON.stringify({
-      name: formData.name,
-      email: formData.email,
-      subject: formData.subject,
-      message: formData.message,
+      name: formData.get("name"),
+      email: formData.get("email"),
+      subject: formData.get("subject"),
+      message: formData.get("message"),
     }),
   })
     .then((response) => response.json())
