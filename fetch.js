@@ -10,18 +10,21 @@ document.getElementById("form").addEventListener("submit", function (event) {
 
   let formData = new FormData(this);
 
+  let jsonData = {
+    name: formData.get("name"),
+    email: formData.get("email"),
+    subject: formData.get("subject"),
+    message: formData.get("message"),
+  };
+  console.log(jsonData);
+
   fetch("https://formsubmit.co/ajax/mugerithuso@gmail.com", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",
     },
-    body: JSON.stringify({
-      name: formData.get("name"),
-      email: formData.get("email"),
-      subject: formData.get("subject"),
-      message: formData.get("message"),
-    }),
+    body: JSON.stringify(jsonData),
   })
     .then((response) => response.json())
     .then((data) => {
@@ -30,7 +33,7 @@ document.getElementById("form").addEventListener("submit", function (event) {
       // Simulate form submission with timeout
       setTimeout(() => {
         // Reset form
-        // contactForm.reset();
+        form.reset();
 
         // Show success message
         formMessage.textContent =
