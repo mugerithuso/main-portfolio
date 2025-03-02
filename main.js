@@ -153,43 +153,43 @@ function loop() {
 loop();
 
 // Contact Form Submission
-if (contactForm) {
-  contactForm.addEventListener("submit", (e) => {
-    e.preventDefault();
+// if (contactForm) {
+//   contactForm.addEventListener("submit", (e) => {
+//     e.preventDefault();
 
-    // Show loading state
-    submitText.style.display = "none";
-    loadingText.style.display = "inline-flex";
+//     // Show loading state
+//     submitText.style.display = "none";
+//     loadingText.style.display = "inline-flex";
 
-    // Get form data
-    const formData = new FormData(contactForm);
-    const formDataObj = {};
-    formData.forEach((value, key) => {
-      formDataObj[key] = value;
-    });
+//     // Get form data
+//     const formData = new FormData(contactForm);
+//     const formDataObj = {};
+//     formData.forEach((value, key) => {
+//       formDataObj[key] = value;
+//     });
 
-    // Simulate form submission with timeout
-    setTimeout(() => {
-      // Reset form
-      contactForm.reset();
+//     // Simulate form submission with timeout
+//     setTimeout(() => {
+//       // Reset form
+//       contactForm.reset();
 
-      // Show success message
-      formMessage.textContent =
-        "Thank you for your message! I'll get back to you soon.";
-      formMessage.className = "form-message success";
+//       // Show success message
+//       formMessage.textContent =
+//         "Thank you for your message! I'll get back to you soon.";
+//       formMessage.className = "form-message success";
 
-      // Reset button state
-      submitText.style.display = "inline-flex";
-      loadingText.style.display = "none";
+//       // Reset button state
+//       submitText.style.display = "inline-flex";
+//       loadingText.style.display = "none";
 
-      // Clear message after 5 seconds
-      setTimeout(() => {
-        formMessage.textContent = "";
-        formMessage.className = "form-message";
-      }, 5000);
-    }, 1500);
-  });
-}
+//       // Clear message after 5 seconds
+//       setTimeout(() => {
+//         formMessage.textContent = "";
+//         formMessage.className = "form-message";
+//       }, 5000);
+//     }, 1500);
+//   });
+// }
 
 // Skill bar animation
 const skillBars = document.querySelectorAll(".skill-progress");

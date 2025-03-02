@@ -1,6 +1,6 @@
 // DOM Elements
 
-const contactForm = document.getElementById("contactForm");
+const contactForm = document.getElementById("form");
 const formMessage = document.getElementById("formMessage");
 const submitText = document.getElementById("submitText");
 const loadingText = document.getElementById("loadingText");
