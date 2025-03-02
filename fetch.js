@@ -28,7 +28,7 @@ document.getElementById("form").addEventListener("submit", function (event) {
       // Simulate form submission with timeout
       setTimeout(() => {
         // Reset form
-        contactForm.reset();
+        // contactForm.reset();
 
         // Show success message
         formMessage.textContent =
