@@ -25,6 +25,7 @@ document.getElementById("form").addEventListener("submit", function (event) {
   })
     .then((response) => response.json())
     .then((data) => {
+      console.log(data);
       // Simulate form submission with timeout
       setTimeout(() => {
         // Reset form
