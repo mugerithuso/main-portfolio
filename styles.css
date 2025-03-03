@@ -896,12 +896,17 @@ section {
   transform: translateY(-3px) rotate(15deg);
 }
 /* HTML: <div class="loader"></div> */
+
 .loader {
-  width: 60px;
+  display: none;
+  width: 120px;
   aspect-ratio: 1;
   display: grid;
-  grid: 50%/50%;
+  grid: 50% / 50%;
   color: #25b09b;
+  position: absolute;
+  justify-self: anchor-center;
+  align-self: anchor-center;
   --_g: no-repeat linear-gradient(currentColor 0 0);
   background: var(--_g), var(--_g), var(--_g);
   background-size: 50.1% 50.1%;
