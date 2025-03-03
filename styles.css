@@ -763,6 +763,12 @@ section {
   height: 100%;
   transition: all 0.3s ease;
 }
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
 .contact-card:hover,
 .form-card:hover {
