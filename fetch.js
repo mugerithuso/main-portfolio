@@ -1,20 +1,19 @@
 // DOM Elements
 
-const contactForm = document.getElementById("form");
 const formMessage = document.getElementById("formMessage");
 const submitText = document.getElementById("submitText");
 const loadingText = document.getElementById("loadingText");
-let submitButton = document.getElementById("submitButton");
 
 document.getElementById("form").addEventListener("submit", function (event) {
   event.preventDefault();
 
-  let formData = new FormData(this);
-  let loder = document.querySelector(".loader");
+  let form = this;
+  let submitButton = form.querySelector("button[type='submit']");
 
   //Showing loading and desabling submit button
   submitButton.disabled = true;
-  loder.style.display = "block";
+
+  let formData = new FormData(this);
 
   let jsonData = {
     name: formData.get("name"),
@@ -58,12 +57,15 @@ document.getElementById("form").addEventListener("submit", function (event) {
 
         // hide loading and enabling submit button
         submitButton.disabled = false;
-        loder.style.display = "none";
       }, 1500);
     })
     .catch((error) => {
       // Show success message
-      formMessage.textContent = error;
+      formMessage.textContent = " messege not sent: " + error;
       formMessage.className = "form-message error";
+      setTimeout(() => {
+        formMessage.textContent = "";
+        formMessage.className = "form-message";
+      }, 4000);
     });
 });
