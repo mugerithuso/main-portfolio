@@ -13,7 +13,7 @@ document.getElementById("form").addEventListener("submit", function (event) {
   let loder = document.querySelector(".loader");
 
   //Showing loading and desabling submit button
-  submitButton.disabled = true;
+  submitButton. = true;
   loder.style.display = "block";
 
   let jsonData = {
