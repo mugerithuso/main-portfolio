@@ -4,11 +4,17 @@ const contactForm = document.getElementById("form");
 const formMessage = document.getElementById("formMessage");
 const submitText = document.getElementById("submitText");
 const loadingText = document.getElementById("loadingText");
+const submitButton = document.getElementById("submitButton");
 
 document.getElementById("form").addEventListener("submit", function (event) {
   event.preventDefault();
 
   let formData = new FormData(this);
+  let loder = document.querySelector(".loader");
+
+  //Showing loading and desabling submit button
+  submitButton.disabled = true;
+  loder.style.display = "block";
 
   let jsonData = {
     name: formData.get("name"),
@@ -44,11 +50,15 @@ document.getElementById("form").addEventListener("submit", function (event) {
         submitText.style.display = "inline-flex";
         loadingText.style.display = "none";
 
-        // Clear message after 5 seconds
+        // Clear message after 4 seconds
         setTimeout(() => {
           formMessage.textContent = "";
           formMessage.className = "form-message";
-        }, 5000);
+        }, 4000);
+
+        // hide loading and enabling submit button
+        submitButton.disabled = false;
+        loder.style.display = "none";
       }, 1500);
     })
     .catch((error) => {
