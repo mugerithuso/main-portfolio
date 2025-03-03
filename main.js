@@ -107,6 +107,7 @@ const phrases = [
   "Hi, I'm Thuso Collen Mugeri",
   "I'm a Software Engeneer",
   "I'm looking fore a new position",
+  "Enjoy the beauty of my creation...",
 ];
 let i = 0;
 let j = 0;
