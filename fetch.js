@@ -4,7 +4,7 @@ const contactForm = document.getElementById("form");
 const formMessage = document.getElementById("formMessage");
 const submitText = document.getElementById("submitText");
 const loadingText = document.getElementById("loadingText");
-const submitButton = document.getElementById("submitButton");
+let submitButton = document.getElementById("submitButton");
 
 document.getElementById("form").addEventListener("submit", function (event) {
   event.preventDefault();
@@ -13,7 +13,7 @@ document.getElementById("form").addEventListener("submit", function (event) {
   let loder = document.querySelector(".loader");
 
   //Showing loading and desabling submit button
-  submitButton. = true;
+  submitButton.disabled = true;
   loder.style.display = "block";
 
   let jsonData = {
