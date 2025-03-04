@@ -49,6 +49,10 @@ document.getElementById("form").addEventListener("submit", function (event) {
         formMessage.className = "form-message success";
         messageResponse.style.display = "flex";
 
+        // Reset button state
+        submitText.style.display = "inline-flex";
+        loadingText.style.display = "none";
+
         // Clear message after 4 seconds
         setTimeout(() => {
           formMessage.textContent = "";
