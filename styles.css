@@ -16,11 +16,12 @@
   --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
   --gradient-1: linear-gradient(135deg, var(--primary), var(--accent));
+  --gradient-2: linear-gradient(90deg, var(--secondary), var(--accent-2));
 }
 
 .dark-theme {
   --background: #1a1a2e;
-  --foreground: #e9f1fa;
+  --foreground: #e0e2e6;
   --primary: #00abe4;
   --primary-hover: #0089b7;
   --secondary: #ff6b6b;
@@ -53,7 +54,6 @@ body {
   color: var(--foreground);
   background-color: var(--background);
   transition: background-color 0.3s, color 0.3s;
-  height: 100%;
 }
 
 a {
@@ -311,7 +311,6 @@ h6 {
 /* Hero Section */
 .hero {
   padding: 10rem 0 6rem;
-  background: var(--gradient-2);
   position: relative;
   overflow: hidden;
 }
@@ -541,7 +540,6 @@ section {
 
 /* Skills Section */
 .skills {
-  background: var(--gradient-2);
   color: var(--text-light);
 }
 
@@ -858,6 +856,58 @@ section {
   background-color: rgba(239, 68, 68, 0.1);
   color: #ef4444;
 }
+.loading {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 5000;
+
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffffb6;
+  overflow: auto;
+}
+.stopLoading {
+  display: none;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  border: 2px solid #fc0404;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+.loader::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  border: 2px solid #049be1;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+#response {
+  background-color: transparent;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 /* Footer */
 .footer {
@@ -897,53 +947,7 @@ section {
   background-color: var(--secondary);
   transform: translateY(-3px) rotate(15deg);
 }
-.loading {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  z-index: 5000;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  background-color: #ffffffb6;
-  overflow: auto;
-}
 
-.loader {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  display: inline-block;
-  position: relative;
-  border: 2px solid #fc0404;
-  box-sizing: border-box;
-  animation: rotation 1s linear infinite;
-}
-.loader::after {
-  content: "";
-  box-sizing: border-box;
-  position: absolute;
-  left: 4px;
-  top: 4px;
-  border: 2px solid #049be1;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-}
-#response {
-  background-color: transparent;
-}
-
-@keyframes rotation {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 /* Responsive Styles */
 @media (max-width: 992px) {
   h1 {
