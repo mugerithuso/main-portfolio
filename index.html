@@ -4,9 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta property="og:title" content="MtC Portfolio" />
-    <meta property="og:description" content="Dive deep into the beauty of my creation." />
+    <meta
+      property="og:description"
+      content="Dive deep into the beauty of my creation."
+    />
     <meta property="og:image" content="Screenshot (26).png" />
-    <meta property="og:url" content="https://mugerithuso.github.io/main-portfolio/" />
+    <meta
+      property="og:url"
+      content="https://mugerithuso.github.io/main-portfolio/"
+    />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="vhageri.com" />
     <title>MtC Portfolio</title>
@@ -23,6 +29,7 @@
   </head>
   <body>
     <!-- Header -->
+
     <header class="header">
       <div class="container">
         <div class="header-content">
@@ -320,21 +327,16 @@
         <div class="projects-grid">
           <div class="project-card animate-on-scroll">
             <div class="project-image">
-              <img
-                src="Screenshot (26).png"
-                alt="portfolio"
-              />
+              <img src="Screenshot (26).png" alt="portfolio" />
             </div>
             <div class="project-content">
               <h3>portfolio websites</h3>
               <p>
-                Three distinct portfolio websites
-                 have been built using different web
-                  technologies, each showcasing a unique 
-                  design and tailored functionality.
-                  These projects highlight our versatility
-                   in leveraging diverse tech stacks to deliver
-                    innovative, responsive web solutions.
+                Three distinct portfolio websites have been built using
+                different web technologies, each showcasing a unique design and
+                tailored functionality. These projects highlight our versatility
+                in leveraging diverse tech stacks to deliver innovative,
+                responsive web solutions.
               </p>
               <div class="project-tags">
                 <span class="tag">HTML</span>
@@ -345,10 +347,11 @@
                 <span class="tag">MySQL</span>
                 <span class="tag">PHP</span>
                 <span class="tag">Figma</span>
-
               </div>
               <div class="project-links">
-                <a href="https://github.com/mugerithuso" class="btn btn-sm btn-outline"
+                <a
+                  href="https://github.com/mugerithuso"
+                  class="btn btn-sm btn-outline"
                   ><i class="fab fa-github"></i> Code</a
                 >
                 <a href="#" class="btn btn-sm btn-primary"
@@ -367,10 +370,8 @@
             <div class="project-content">
               <h3>Community update App</h3>
               <p>
-                An interactive platform for Updating
-                 the community about the special events
-                  happening in that particular community.
-
+                An interactive platform for Updating the community about the
+                special events happening in that particular community.
               </p>
               <div class="project-tags">
                 <span class="tag">React Native</span>
@@ -390,20 +391,15 @@
           </div>
           <div class="project-card animate-on-scroll">
             <div class="project-image">
-              <img
-                src="hd_image.png"
-                alt="Health Monitoring System"
-              />
+              <img src="hd_image.png" alt="Health Monitoring System" />
             </div>
             <div class="project-content">
               <h3>Ai personal agent</h3>
               <p>
-                An AI-powered assistant app designed to help users
-                 manage everyday tasks, from scheduling meetings and 
-                 replying to emails to setting reminders, supporting 
-                 learning, tracking exercise, and monitoring overall 
-                 health and well-being.
-
+                An AI-powered assistant app designed to help users manage
+                everyday tasks, from scheduling meetings and replying to emails
+                to setting reminders, supporting learning, tracking exercise,
+                and monitoring overall health and well-being.
               </p>
               <div class="project-tags">
                 <span class="tag">Python</span>
@@ -420,7 +416,6 @@
                 >
               </div>
             </div>
-          </div>
           </div>
         </div>
       </div>
@@ -562,7 +557,14 @@
     </section>
 
     <!-- Contact Section -->
+
     <section id="contact" class="contact">
+      <div id="loading" class="loading">
+        <span id="loader" class="loader"></span>
+      </div>
+      <div id="response" class="loading">
+        <div id="formMessage" class="form-message"></div>
+      </div>
       <div class="container">
         <div class="section-header">
           <h2>Get In Touch</h2>
@@ -606,12 +608,19 @@
                 Fill out the form below and I'll get back to you as soon as
                 possible
               </p>
-              
-              <form  id="form">
-                
-                <input type="hidden" name="_template" value="table">
-                <input type="hidden" name="_next" value="https://mugerithuso.github.io/main-portfolio/">
-                <input type="hidden" name="_autoresponse" value="Thank you for contacting,I will get back to you very soon.">
+
+              <form id="form">
+                <input type="hidden" name="_template" value="table" />
+                <input
+                  type="hidden"
+                  name="_next"
+                  value="https://mugerithuso.github.io/main-portfolio/"
+                />
+                <input
+                  type="hidden"
+                  name="_autoresponse"
+                  value="Thank you for contacting,I will get back to you very soon."
+                />
 
                 <div class="form-group">
                   <label for="name">Name</label>
@@ -623,7 +632,7 @@
                     required
                   />
                 </div>
-                
+
                 <div class="form-group">
                   <label for="email">Email</label>
                   <input
@@ -644,7 +653,7 @@
                     required
                   />
                 </div>
-                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_captcha" value="false" />
                 <div class="form-group">
                   <label for="message">Message</label>
                   <textarea
@@ -655,7 +664,11 @@
                     required
                   ></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary btn-block" id="submitButtn">
+                <button
+                  type="submit"
+                  class="btn btn-primary btn-block"
+                  id="submitButtn"
+                >
                   <span id="submitText">Send Message</span>
                   <span id="loadingText" style="display: none"
                     >Sending... <i class="fas fa-spinner fa-spin"></i
@@ -663,8 +676,6 @@
                   <i class="fas fa-paper-plane"></i>
                 </button>
               </form>
-            
-              <div id="formMessage" class="form-message"></div>
             </div>
           </div>
         </div>
@@ -707,6 +718,7 @@
         </div>
       </div>
     </footer>
+
     <script src="fetch.js"></script>
     <script src="main.js"></script>
   </body>

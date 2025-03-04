@@ -8,10 +8,13 @@ document.getElementById("form").addEventListener("submit", function (event) {
   event.preventDefault();
 
   let form = this;
+  let loading = document.getElementById("loading");
+  let messageResponse = document.getElementById("response");
   let submitButton = form.querySelector("button[type='submit']");
 
   //Showing loading and desabling submit button
   submitButton.disabled = true;
+  loading.style.display = "flex";
 
   let formData = new FormData(this);
 
@@ -35,15 +38,16 @@ document.getElementById("form").addEventListener("submit", function (event) {
     .then((data) => {
       console.log(data);
       console.log(formData);
+      loading.style.display = "none";
       // Simulate form submission with timeout
       setTimeout(() => {
         // Reset form
         form.reset();
-
         // Show success message
         formMessage.textContent =
           "Thank you for your message! I'll get back to you soon.";
         formMessage.className = "form-message success";
+        messageResponse.style.display = "flex";
 
         // Reset button state
         submitText.style.display = "inline-flex";
@@ -53,6 +57,7 @@ document.getElementById("form").addEventListener("submit", function (event) {
         setTimeout(() => {
           formMessage.textContent = "";
           formMessage.className = "form-message";
+          messageResponse.style.display = "none";
         }, 4000);
 
         // hide loading and enabling submit button
@@ -63,9 +68,11 @@ document.getElementById("form").addEventListener("submit", function (event) {
       // Show success message
       formMessage.textContent = " messege not sent: " + error;
       formMessage.className = "form-message error";
+      messageResponse.style.display = "flex";
       setTimeout(() => {
         formMessage.textContent = "";
         formMessage.className = "form-message";
+        messageResponse.style.display = "none";
       }, 4000);
     });
 });

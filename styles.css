@@ -46,12 +46,14 @@ html {
   scroll-behavior: smooth;
 }
 
+html,
 body {
   font-family: "Inter", sans-serif;
   line-height: 1.6;
   color: var(--foreground);
   background-color: var(--background);
   transition: background-color 0.3s, color 0.3s;
+  height: 100%;
 }
 
 a {
@@ -895,7 +897,53 @@ section {
   background-color: var(--secondary);
   transform: translateY(-3px) rotate(15deg);
 }
+.loading {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 5000;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffffb6;
+  overflow: auto;
+}
 
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  border: 2px solid #fc0404;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  border: 2px solid #049be1;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+#response {
+  background-color: transparent;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 /* Responsive Styles */
 @media (max-width: 992px) {
   h1 {
